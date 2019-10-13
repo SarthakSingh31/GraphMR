@@ -12,7 +12,7 @@ public class LatexToASCIIMath
         fixedString = fixedString.Replace("\\[", "");
         fixedString = fixedString.Replace("\\]", "");
         fixedString = fixedString.Replace("\\times", "*");
-        fixedString = fixedString.Replace("\\pi", "\u03C0");
+        fixedString = fixedString.Replace("\\pi", "3.1415927");
         fixedString = fixedString.Replace("\\theta", "\u03B8");
 
         fixedString = fixedString.Replace("0(", "0*(");

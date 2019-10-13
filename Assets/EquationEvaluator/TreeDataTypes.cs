@@ -35,11 +35,13 @@ public class Operator : Expression
 	public Func<float, float, float> operation;
 	public Expression left;
 	public Expression right;
+	public string strRep;
 
-	public Operator(Func<float, float, float> operation, Expression left, Expression right) {
+	public Operator(Func<float, float, float> operation, Expression left, Expression right, string strRep) {
 		this.operation = operation;
 		this.left = left;
 		this.right = right;
+		this.strRep = strRep;
 	}
 
 	public override float eval(float x, float z)
@@ -49,7 +51,7 @@ public class Operator : Expression
 
 	public override string ToString()
 	{
-		return $"Op({left.ToString()}, {right.ToString()})";
+		return $"({left.ToString()} {strRep} {right.ToString()})";
 	}
 }
 
