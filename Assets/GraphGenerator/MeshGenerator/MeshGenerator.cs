@@ -73,6 +73,32 @@ public class MeshGenerator
                 vertices.Add(surfaceMap[x + 1][z]);
                 triangles.Add(vertices.Count - 1);
                 uvs.Add(new Vector2(1, 0));
+
+                // Triangle 1 - back
+                vertices.Add(surfaceMap[x][z]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(0, 0));
+
+                vertices.Add(surfaceMap[x + 1][z + 1]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(1, 1));
+
+                vertices.Add(surfaceMap[x][z + 1]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(0, 1));
+
+                // Triangle 2 - back
+                vertices.Add(surfaceMap[x][z]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(0, 0));
+
+                vertices.Add(surfaceMap[x + 1][z]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(1, 0));
+
+                vertices.Add(surfaceMap[x + 1][z + 1]);
+                triangles.Add(vertices.Count - 1);
+                uvs.Add(new Vector2(1, 1));
             }
         }
 

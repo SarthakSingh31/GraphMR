@@ -19,6 +19,7 @@ public class GraphDisplay : MonoBehaviour
             float b = 1;
             float c = 1;
 
+            //return 1f - (x + z);
             return c * Mathf.Sqrt((Mathf.Pow(x, 2) / Mathf.Pow(a, 2)) + (Mathf.Pow(z, 2) / Mathf.Pow(b, 2)));
         };
 
@@ -33,6 +34,10 @@ public class GraphDisplay : MonoBehaviour
         mesh.vertices = meshData.vertices;
         mesh.triangles = meshData.triangles;
         mesh.uv = meshData.uvs;
+
+        mesh.RecalculateNormals();
+        mesh.RecalculateTangents();
+        mesh.RecalculateBounds();
 
         GetComponent<MeshFilter>().mesh = mesh;
 
