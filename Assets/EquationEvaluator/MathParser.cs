@@ -21,13 +21,13 @@ public class MathParser
 			if (char.IsDigit(token[0]))
 			{
 				output.Push(new ConstExpr(float.Parse(token)));
-			} else if (token[0].Equals('x') || token[0].Equals('z'))
+			} else if (token.ToLower()[0].Equals('x') || token.ToLower()[0].Equals('z'))
 			{
 				if (token.Length > 1)
 				{
 					throw new Exception($"function name {token} cannot begin with x or z");
 				}
-				output.Push(new VarExpr(token[0]));
+				output.Push(new VarExpr(token.ToLower()[0]));
 			} else if (isFunction(token))
 			{ // token is a function
 				operators.Push(token);
