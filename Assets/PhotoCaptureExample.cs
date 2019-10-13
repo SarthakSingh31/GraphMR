@@ -47,12 +47,23 @@ public class PhotoCaptureExample : MonoBehaviour
         Vector3 topLeftScreen = camera.WorldToScreenPoint(topLeft);
         Vector3 bottomRightScreen = camera.WorldToScreenPoint(bottomRight);
 
-        Texture2D uncroppedImage = new Texture2D(1280, 720);
+        Resolution cameraResolution = PhotoCapture.SupportedResolutions.OrderByDescending((res) => res.width * res.height).First();
+        Texture2D uncroppedImage = new Texture2D(cameraResolution.width, cameraResolution.height);
         photoCaptureFrame.UploadImageDataToTexture(uncroppedImage);
         int width = (int)bottomRightScreen.x - (int)topLeftScreen.x;
         int height = (int)bottomRightScreen.y - (int)topLeftScreen.y;
         print($"width = {width}, height = {height}, x = {topLeftScreen.x}, y = {topLeftScreen.y}");
         Texture2D croppedImage = new Texture2D(width, height);
+
+        /*GameObject quad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+        Renderer quadRenderer = quad.GetComponent<Renderer>() as Renderer;
+        quadRenderer.material = new Material(Shader.Find("Standard"));
+
+        quad.transform.parent = this.transform;
+        quad.transform.localPosition = new Vector3(0.0f, 0.0f, 3.0f);
+
+        quadRenderer.material.SetTexture("_MainTex", croppedImage);*/
+
         croppedImage.SetPixels(uncroppedImage.GetPixels((int)topLeftScreen.x, (int)topLeftScreen.y, width, height));
         byte[] pngImage = uncroppedImage.EncodeToPNG();
         byte[] croppedPngImage = croppedImage.EncodeToPNG();
@@ -68,7 +79,7 @@ public class PhotoCaptureExample : MonoBehaviour
         StreamWriter writer2 = new StreamWriter(path2, true);
         writer2.WriteLine(enc2);
 
-        StartCoroutine(graphRenderer.GetComponent<GraphDisplay>().imageProcessor.PostImage(enc2));
+        //StartCoroutine(graphRenderer.GetComponent<GraphDisplay>().imageProcessor.PostImage("data:image/png;base64," + enc));
 
         writer.Close();
         writer2.Close();

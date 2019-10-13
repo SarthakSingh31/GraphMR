@@ -282,8 +282,8 @@ MonoBehaviour:
   smoothing: 1
   lifetime: 0
   referenceDirection: 1
-  minDistance: 0.7
-  maxDistance: 0.7
+  minDistance: 0.5
+  maxDistance: 0.5
   minViewDegrees: 0
   maxViewDegrees: 0
   aspectV: 1
@@ -322,7 +322,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &168985073
@@ -548,10 +548,10 @@ MonoBehaviour:
   smoothing: 1
   lifetime: 0
   referenceDirection: 1
-  minDistance: 1
-  maxDistance: 1
-  minViewDegrees: 25
-  maxViewDegrees: 30
+  minDistance: 0.5
+  maxDistance: 0.5
+  minViewDegrees: 15
+  maxViewDegrees: 20
   aspectV: 1
   ignoreAngleClamp: 0
   ignoreDistanceClamp: 0
@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 3885370232023760435, guid: 36ff76a9e7929f342915274725573e00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.05
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3885370232023760435, guid: 36ff76a9e7929f342915274725573e00,
         type: 3}
