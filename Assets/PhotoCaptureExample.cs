@@ -10,6 +10,7 @@ public class PhotoCaptureExample : MonoBehaviour
     PhotoCapture photoCaptureObject = null;
 	string filepath = "Assets/capture.png";
     public GameObject rect;
+    public GameObject graphRenderer;
     public Camera camera;
 
     // Use this for initialization
@@ -66,6 +67,8 @@ public class PhotoCaptureExample : MonoBehaviour
         string path2 = "Assets/testCrop.txt";
         StreamWriter writer2 = new StreamWriter(path2, true);
         writer2.WriteLine(enc2);
+
+        //StartCoroutine(graphRenderer.GetComponent<GraphDisplay>().imageProcessor.PostImage(enc2));
 
         writer.Close();
         writer2.Close();
