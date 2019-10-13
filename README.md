@@ -1,4 +1,3 @@
-# mr.graph
 ![logo](/Presentation/mrgraphlogo4.png)
 Contributors: Sarthak Singh, Aditya Kumar, Patrick Mao, Holden McGovern, Nelson Tan
 
