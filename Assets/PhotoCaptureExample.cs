@@ -68,7 +68,7 @@ public class PhotoCaptureExample : MonoBehaviour
         StreamWriter writer2 = new StreamWriter(path2, true);
         writer2.WriteLine(enc2);
 
-        //StartCoroutine(graphRenderer.GetComponent<GraphDisplay>().imageProcessor.PostImage(enc2));
+        StartCoroutine(graphRenderer.GetComponent<GraphDisplay>().imageProcessor.PostImage(enc2));
 
         writer.Close();
         writer2.Close();
