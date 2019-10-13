@@ -31,7 +31,7 @@ public class ImageProcessor
         else
         {
             updated = true;
-            text = request.downloadHandler.text;
+            text = LatexToASCIIMath.covert(request.downloadHandler.text);
         }
     }
 }
