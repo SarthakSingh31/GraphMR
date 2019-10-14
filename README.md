@@ -9,6 +9,8 @@ The way we learn math throughout school emphasizes symbolic reasoning; we think 
 With Hololens 2, we can utilize mixed reality to take an equation from the physical world and dynamically display it in the virtual world. 
 By using the Hololens webcam to get images of equations in real time and an api that converts those images to LateX syntax, we can convert the equations you draw in your notebook or on a whiteboard to a 3-Dimensional mesh viewable through the Hololens. This allows students to view surfaces in a space that they are able to manipulate, and it enables teachers to portray their course content in a more intuitive way.
 
+![pres](/Presentation/mrgraphdeck.pdf)
+
 ## Features
 
 ## Usage
